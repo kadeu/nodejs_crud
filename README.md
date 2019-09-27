@@ -1,1 +1,1 @@
-```node server.js``` pour lancer le serveur
+l'url de la base de donnée se trouve dans `config.js`
