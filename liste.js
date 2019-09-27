@@ -1,6 +1,15 @@
-var fs = require('fs');
+Users.find({
 
-fs.writeFile('./movies/films.txt',  data, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
+}, (err, products) => {
+  if (err) throw err;
+  let concatenate = "";
+  async.forEachOf(products,  (value, key, callback) => {
+      concatenate += value; // ???
+      callback();
+  }, (err) => {
+      if (err) throw err;
+      fs.writefile('./movies/', concatenate, (err) => {
+          if (err) throw err;
+      });
   });
+});
